@@ -4,6 +4,7 @@
 	server {{.IP}}:{{.PORT}};
 {{- else -}}
     upstream {{.HOST}} {
+    least_conn;
 	#Acces through rancher managed network
 	server {{.IP}}:{{.PORT}};
 {{- end -}}	
